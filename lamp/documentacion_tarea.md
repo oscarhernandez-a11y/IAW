@@ -10,8 +10,8 @@ En este apartado se inicializa la máquina virtual dentro del entorno de virtual
 * **Despliegue en Proxmox VE:** Inicio de la máquina virtual (KVM/LXC) destinada al servidor web. El estado indica que los recursos han sido asignados correctamente y la máquina se encuentra operativa.
 * **Comprobación de Red:** Ejecución de comandos de red (`ip a` / `ifconfig`) en la terminal local del servidor para validar la dirección IP asignada por la interfaz de red, que servirá de punto de acceso para los clientes de la red.
 
-![Upgrade](upgrade.png)
-![ip asignada](ipa.png)
+![Upgrade](capturas/upgrade.png)
+![ip asignada](capturas/ipa.png)
 
 ---
 
@@ -21,8 +21,8 @@ Instalación y puesta en marcha del servidor HTTP Apache para la entrega de cont
 * **Estado del Servicio:** Comprobación del daemon HTTP a través de `systemctl status apache2` (o `httpd`). El servicio refleja un estado activo y en ejecución (*active (running)*).
 * **Página Web Personalizada:** Despliegue de un archivo HTML de prueba en el directorio raíz (`/var/www/html/`). Validación de la correcta visualización del contenido accediendo directamente mediante la dirección IP obtenida en el paso previo desde un navegador web.
 
-![status](apache.png)
-![personalizada con nombre y grupo](apachewebminombre.png)
+![status](capturas/apache.png)
+![personalizada con nombre y grupo](capturas/apachewebminombre.png)
 
 ---
 
@@ -64,8 +64,8 @@ INSERT INTO alumnos (nombre, edad) VALUES
 SELECT * FROM alumnos;
 ```
 
-![status](mariaDB.png)
-![select *](select.png)
+![status]capturas/(mariaDB.png)
+![select *](capturas/select.png)
 
 ---
 
@@ -75,8 +75,8 @@ Verificación del procesamiento en el lado del servidor y generación de conteni
 * **Archivo de Diagnóstico (`info.php`):** Creación del fichero con la instrucción `<?php phpinfo(); ?>` en la raíz del servidor web para contrastar que el módulo de Apache para PHP y las extensiones correspondientes para base de datos (`mysqli` / `pdo_mysql`) están correctamente habilitadas.
 * **Tabla Dinámica (`consulta.php`):** Desarrollo de un script PHP que se conecta a la base de datos utilizando el usuario `alumno_iaw`. El archivo extrae los registros de la tabla `alumnos` mediante un búfer y los renderiza de forma interactiva en una tabla estructurada dentro de una vista del navegador.
 
-![info.php](infophp.png)
-![consulta.php](php.png)
+![info.php](capturas/infophp.png)
+![consulta.php](capturas/php.png)
 
 ---
 
@@ -88,8 +88,9 @@ Uso de un entorno visual web para la manipulación y control seguro de los esque
 
 > **[INSERTAR CAPTURA: Sesión de phpMyAdmin con el esquema alumnos_db y verificación del nuevo registro insertado]**
 
-![myadmin](phpmyadmininiciado.png)
-![insert desde web](tablaconinsertdedelaweb.png)
+![myadmin](capturas/phpmyadmininiciado.png)
+![isert](capturas/insertweb.png)
+![insert desde web](capturas/tablaconinsertdedelaweb.png)
 
 ---
 
@@ -101,6 +102,5 @@ Implementación de analítica web interactiva procesando los registros de petici
 
 > **[INSERTAR CAPTURA: Panel de GoAccess interactivo en la terminal de comandos y archivo reporte.html en el navegador]**
 
-![status](goacces.png)
-![status](insertweb.png)
-![reporte.html](reportehtml.png)
+![goacces](capturas/goacces.png)
+![reporte.html](capturas/reportehtml.png)
